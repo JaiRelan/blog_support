@@ -1,0 +1,99 @@
+body{
+  font-family: Lato;
+}
+.click__btn{
+  width: 200px;
+  height: 25px;
+  background-color: #4087a2;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 50px;
+  margin: 50px auto;
+  cursor: pointer;
+  color: #fff;
+  transition: width 0.25s ease-out;
+  border: 3px solid #4087a2;
+  position: relative;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+.click__btn.active{
+  width: 350px;
+  border-color: #4087a2;
+  background: #fff;
+}
+
+.click__btn.active input[type=text]{
+  background: transparent;
+  border-color: transparent;
+  border: 0;
+  padding: 10px;
+  position: absolute;
+  left: 10px;
+  top: 0; bottom: 0;
+  margin: auto;
+  width: calc(100% - 150px);
+  animation: showEmailContent 0.2s ease-in-out;
+  animation-fill-mode: forwards;
+  transform-origin: center;
+  opacity: 0;
+}
+.click__btn.active input[type=text]:focus{
+  outline: -webkit-focus-ring-color auto 0px;
+}
+.click__btn.active .send__btn{
+  width: 80px;
+  height: 45px;
+  position: absolute;
+  right: 5px;
+  top: 0; bottom: 0;
+  margin: auto;
+  background: #4087a2;
+  line-height: 3;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 0.85em;
+  animation: showEmailBtn 0.2s ease-in-out;
+  animation-delay: 0.25s;
+  animation-fill-mode: forwards;
+  transform-origin: center;
+  opacity: 0;
+}
+.click__btn:not(.thank-you):hover{filter: brightness(110%);}
+.click__btn.active.thank-you{
+    width: 200px;
+    background-color: #a73d3d;
+    border-color: #a73d3d;
+    animation: showThankyouContent 0.1s ease-in-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+    color: transparent;
+    cursor: unset;
+}
+@keyframes showEmailBtn {
+    0% { 
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes showEmailContent {
+    0% { 
+        transform: scale(0);
+        width: 250px;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        width: 250px;
+    }
+}
+@keyframes showThankyouContent {
+    0% {  color: transparent; }
+    100% { color: #fff; }
+}
+
+.made-by{text-align: center;}
